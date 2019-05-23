@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "ja">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="/aaa">
+        <p>
+            サブミットボタン:<imput type="submit" name="sb" value ="決定"/>
+        </p>
+        <p>
+            リセットボタン:<input type="reset" />
+        </p>
+        
+        <p>
+            氏名:<input type="text" name="tb" value="初期値"/>
+        </p>
+
+        <p>
+            パスワードボックス:<input type="password" name="pb" value="初期値"/>
+        </p>
+        <p>
+            行ってみたい場所:<input type="radio" name="rb" value="国内" checked>国内
+            <input type="radio" name="rb" value="国外" checked>国外
+            <input type="radio" name="rb" value="その他" checked>その他
+        </p>
+        <p>
+            乗り物:<input type="checkbox" name="cb" value="飛行機" checked>飛行機
+            <input type="checkbox" name="cb" value="新幹線" checked>新幹線
+            <input type="checkbox" name="cb" value="船" checked>船
+
+        </p>
+        <p>
+            予算:<select name="combo" >
+                <option value="¥10000未満" checked>¥10000未満
+                <option value="¥10000から¥50000" checked>¥10000から¥50000
+                <option value="¥50000以上" checked>¥50000以上
+            </select>
+        </p>
+        <p>
+            目的:<select name="list" size="3" multiple>
+                <option value="勉強" checked>勉強
+                    <option value = "旅行">旅行
+                    <option value = "その他">その他   
+            </select>
+        </p>
+        <p>
+            行きたい国があれば記載して下さい:<textarea name="ta" rows="5" cols="30"></textarea>
+        </p>
+        </form>
+    
+    
+    
+    </body>
+
+</html>
