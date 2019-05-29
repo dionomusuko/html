@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang = "ja">
+
     <head>
         <meta charset="utf-8">
+            <title>
+                旅行計画表
+            </title>
+        旅行計画表
     </head>
     <body>
         <form action="/aaa">
         <p>
-            サブミットボタン:<imput type="submit" name="sb" value ="決定"/>
+            サブミットボタン:<input type="submit" name="sb" value ="決定"/>
         </p>
         <p>
             リセットボタン:<input type="reset" />
@@ -26,9 +31,10 @@
         </p>
         <p>
             乗り物:<input type="checkbox" name="cb" value="飛行機" checked>飛行機
-            <input type="checkbox" name="cb" value="新幹線" checked>新幹線
-            <input type="checkbox" name="cb" value="船" checked>船
-
+            <input type="checkbox" name="cb" value="新幹線" unchecked>新幹線
+            <input type="checkbox" name="cb" value="船" unchecked>船
+            <input type="checkbox" name="cb" value="車" unchecked>車
+            <input type="checkbox" name="cb" value="その他" unchecked>その他
         </p>
         <p>
             予算:<select name="combo" >
@@ -39,7 +45,7 @@
         </p>
         <p>
             目的:<select name="list" size="3" multiple>
-                <option value="勉強" checked>勉強
+                <option value="留学" checked>留学
                     <option value = "旅行">旅行
                     <option value = "その他">その他   
             </select>
@@ -53,4 +59,4 @@
     
     </body>
 
-</html>
+</html
