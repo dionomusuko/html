@@ -19,9 +19,7 @@ server.mount_proc ("/") do|req, res|
         </head>
         <body>
             <form action="/aaa" method = "get">
-            <p>
-                サブミットボタン:<input type="submit" name="sb" value ="決定"/>
-            </p>
+           
             <p>
                 リセットボタン:<input type="reset" />
             </p>
@@ -31,7 +29,7 @@ server.mount_proc ("/") do|req, res|
             </p>
     
             <p>
-                パスワードボックス:<input type="password" name="pb" value="初期値"/>
+                パスワード:<input type="password" name="pb" value="初期値"/>
             </p>
             <p>
                 行ってみたい場所:<input type="radio" name="rb" value="国内" checked>国内
@@ -62,6 +60,9 @@ server.mount_proc ("/") do|req, res|
             <p>
                 行きたい国があれば記載して下さい:<textarea name="ta" rows="5" cols="30"></textarea>
             </p>
+            <p>
+            決定ボタン:<input type="submit" name="sb" value ="決定"/>
+            </p>
             </form>
         
         
@@ -81,14 +82,15 @@ server.mount_proc("/aaa") do |req, res|
         <meta charset="utf-8">
     </head>
    <body>
-       <p>サブミットボタン : #{req.query["sb"].force_encoding("utf-8")}</p>
+       
        <p>氏名 : #{req.query["tb"].force_encoding("utf-8")}</p>
-       <p>パスワードボックス : #{req.query["pb"].force_encoding("utf-8")}</p>
+       <p>パスワード : #{req.query["pb"].force_encoding("utf-8")}</p>
        <p>行ってみたい場所 : #{req.query["rb"].force_encoding("utf-8")}</p>
        <p>乗り物 : #{req.query["cb"].force_encoding("utf-8")}</p>
        <p>予算 : #{req.query["combo"].force_encoding("utf-8")}</p>
        <p>目的 : #{req.query["list"].force_encoding("utf-8")}</p>
        <p>行きたい国があれば記載して下さい : #{req.query["ta"].force_encoding("utf-8")}</p>
+       <p>決定ボタン : #{req.query["sb"].force_encoding("utf-8")}</p>
    </body>
 </html>
 EOF
