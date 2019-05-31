@@ -5,7 +5,7 @@ config = {
 }
 
 server = WEBrick::HTTPServer.new(config)
-server.mount_proc ("/") {|req, res|
+server.mount_proc ("/") do|req, res|
     res.body = <<EOF
     <!DOCTYPE html>
     <html lang = "ja">
@@ -18,7 +18,7 @@ server.mount_proc ("/") {|req, res|
             旅行計画表
         </head>
         <body>
-            <form action="/aaa">
+            <form action="/aaa" method = "get">
             <p>
                 サブミットボタン:<input type="submit" name="sb" value ="決定"/>
             </p>
@@ -71,7 +71,29 @@ server.mount_proc ("/") {|req, res|
     </html>
     
 EOF
-}
+end
+
+server.mount_proc("/aaa") do |req, res|
+    res.body = <<EOF
+    <!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8">
+    </head>
+   <body>
+       <p>サブミットボタン : #{req.query["sb"].force_encoding("utf-8")}</p>
+       <p>氏名 : #{req.query["tb"].force_encoding("utf-8")}</p>
+       <p>パスワードボックス : #{req.query["pb"].force_encoding("utf-8")}</p>
+       <p>行ってみたい場所 : #{req.query["rb"].force_encoding("utf-8")}</p>
+       <p>乗り物 : #{req.query["cb"].force_encoding("utf-8")}</p>
+       <p>予算 : #{req.query["combo"].force_encoding("utf-8")}</p>
+       <p>目的 : #{req.query["list"].force_encoding("utf-8")}</p>
+       <p>行きたい国があれば記載して下さい : #{req.query["ta"].force_encoding("utf-8")}</p>
+   </body>
+</html>
+EOF
+end
+
 trap(:INT) do 
     server.shutdown
 end
